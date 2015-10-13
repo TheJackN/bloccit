@@ -1,0 +1,31 @@
+<h1>Edit Sponsored Post</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>Guidlines for Sponsored Posting</p>
+    <ul>
+      <li>They must have already paid</li>
+      <li>We only accept cash</li>
+      <li>As is with the rest of the world, if they pay then there are no rules for what they want posted</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= form_for [@sponsored_post.topic, @sponsored_post] do |f| %>
+      <div class="form-group">
+        <%= f.label :title%>
+        <%= f.text_field :title, class: 'form-control', placeholder: 'Obviously the title goes here' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :body %>
+        <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: 'If I had to guess, I would say body goes here' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price %>
+        <%= f.number_field :price, class: 'form-control', placeholder: '$$$$' %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+    <% end %>
+  </div>
+</div>
