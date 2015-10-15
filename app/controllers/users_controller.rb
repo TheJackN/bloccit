@@ -5,8 +5,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    redirect_to users_confirm_path
-
     @user = User.new
     @user.name = params[:user][:name]
     @user.email = params[:user][:email]
