@@ -80,4 +80,20 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe "after_create" do
+    before do
+      @another_post = topic.posts.new(title: 'post title', body: "123456789012345678900", user: user)
+    end
+
+    it "automatically favorites new posts because why not" do
+      @another_post.save
+      expect(user.favorites.where(post_id: @another_post.id)).not_to be_nil
+    end
+
+    it "sends an email to users who JUST MADE A POST" do
+      expect(FavoriteMailer).to receive(:new_post).with(user, @another_post).and_return(double(deliver_now: true))
+
+      @another_post.save
+    end
+  end
 end

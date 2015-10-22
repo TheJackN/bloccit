@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  </head>
+  <body>
+    <h1>You made a new post!</h1>
+    <p>Now you will receive an insane amount of emails from every jackass that comments on your post! Why would we do this without you specifically asking us to?</p>
+    <small>Because we hate you</small>
+    <p>Annyyy Whooo...Check it out here <%= link_to "#{@post.title}", topic_post_url(@post.topic, @post) %></p>
+  </body>
+</html>
