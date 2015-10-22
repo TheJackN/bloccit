@@ -79,4 +79,10 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe "#create_vote" do
+    it "automatically upvotes new posts for creators" do
+      expect(post.up_votes).to eq(1)
+    end
+  end
+
 end
