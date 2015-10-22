@@ -33,3 +33,5 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Used for encrypting User passwords
 gem 'bcrypt'
+# Used for sending sensitive data
+gem 'figaro', '1.0'
