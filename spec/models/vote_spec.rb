@@ -2,10 +2,10 @@ require 'rails_helper'
 include RandomData
 
 RSpec.describe Vote, type: :model do
-  let(:topic)   { create(:topic) }
-  let(:user)    { create(:user) }
-  let(:post)    { create(:post) }
-  let(:vote)  { Vote.create!(value: 1, post: post, user: user)}
+  let(:topic) { create(:topic) }
+  let(:user)  { create(:user) }
+  let(:post)  { create(:post) }
+  let(:vote)  { create(:vote, post: post, user: user)}
 
   it { should belong_to(:post) }
   it { should belong_to(:user) }
