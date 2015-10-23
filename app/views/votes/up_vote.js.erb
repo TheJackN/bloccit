@@ -1,0 +1,6 @@
+<% if @post.up_vote %>
+  $('.js-vote').append("<%= escape_javascript(render(@vote)) %>");
+  $('.js-post-points').html("<strong><%= post.points %></strong>");
+<% else %>
+  $('.js-post-points').html("<strong><%= post.points %></strong>");
+<% end %>

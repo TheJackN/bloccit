@@ -1,0 +1,4 @@
+<% if @post.down_vote %>
+  $('.js-vote').append("<%= escape_javascript(render(@vote)) %>");
+  $('.js-post-points').html("<%= escape_javascript(render partial: 'votes/voter', locals: { post: @post, vote: @vote, points: @post.points}) %>");
+<% end %>
