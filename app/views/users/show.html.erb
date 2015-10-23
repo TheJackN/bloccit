@@ -28,3 +28,6 @@
 <%= render @user.comments %>
 
 <h2>Favorites</h2>
+<% @user.favorites.each do |fav| %>
+  <%= render partial: 'favorites/favorites', locals: { post: fav.post } %>
+<% end %>
