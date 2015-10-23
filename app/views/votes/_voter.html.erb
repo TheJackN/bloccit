@@ -1,7 +1,7 @@
 <% if current_user %>
   <div class="pull-left vote-arrows">
     <div class="js-up-vote"><%= link_to " ", post_up_vote_path(post), class: 'glyphicon glyphicon-chevron-up', method: :post, remote: true %></div>
-    <div class="js-post-points"><strong><%= post.points %></strong></div>
+    <div ><strong id="js-post-points-<%= post.id%>"><%= post.points %></strong></div>
     <div class="js-down-vote"><%= link_to " ", post_down_vote_path(post), class: 'glyphicon glyphicon-chevron-down', method: :post, remote: true %></div>
   </div>
 <% end %>
