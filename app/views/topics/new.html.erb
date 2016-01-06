@@ -21,9 +21,19 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :rating %><br />
+        <%= f.label :rating, "PG", value: "PG" %>
+        <%= f.radio_button :rating, "PG" %>
+        <%= f.label :rating, "PG13", value: "PG13" %>
+        <%= f.radio_button :rating, "PG13" %>
+        <%= f.label :rating, "R", value: "R" %>
+        <%= f.radio_button :rating, "R" %>
+      </div>
+
+      <div class="form-group">
         <%= render partial: 'labels/form', locals: { f: f, labels: @topic.labels } %>
       </div>
-      
+
       <div class="form-group">
         <%= f.label :public, class: 'checkbox' do %>
           <%= f.check_box :public %> Public topic

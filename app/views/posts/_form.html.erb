@@ -17,6 +17,15 @@
     <%= f.label :body %>
     <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: 'Enter Post Body' %>
   <% end %>
+  <%= form_group_tag(post.errors[:rating]) do %>
+    <%= f.label :rating %><br />
+    <%= f.label :rating, "PG", value: "PG" %>
+    <%= f.radio_button :rating, "PG" %>
+    <%= f.label :rating, "PG13", value: "PG13" %>
+    <%= f.radio_button :rating, "PG13" %>
+    <%= f.label :rating, "R", value: "R" %>
+    <%= f.radio_button :rating, "R" %>
+  <% end %>
   <div class="form-group">
     <%= render partial: 'labels/form', locals: { f: f, topic: @topic, labels: @post.labels } %>
   </div>

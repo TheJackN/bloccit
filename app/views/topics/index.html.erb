@@ -7,6 +7,9 @@
         <div class="media-body">
           <h4 class= "media-heading">
             <%= link_to topic.name, topic %>
+            <% if topic.rating %>
+             <button type="button" class="btn btn-info"><%= topic.rating %></button>
+           <% end %>
           </h4>
           <small>
             <%= topic.description %>

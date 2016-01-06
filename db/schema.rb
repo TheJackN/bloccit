@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151023215046) do
+ActiveRecord::Schema.define(version: 20160105201104) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151023215046) do
     t.integer  "topic_id"
     t.integer  "user_id"
     t.float    "rank"
+    t.integer  "rating"
   end
 
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
@@ -78,6 +79,7 @@ ActiveRecord::Schema.define(version: 20151023215046) do
     t.text     "description"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "rating"
   end
 
   create_table "users", force: :cascade do |t|

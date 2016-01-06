@@ -16,6 +16,9 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true
 
+  enum rating: [ :PG, :PG13, :R ]
+
+
   def up_votes
     votes.where(value: 1).count
   end

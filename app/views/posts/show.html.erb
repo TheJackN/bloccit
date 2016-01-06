@@ -1,7 +1,11 @@
 <div>
   <%= render partial: 'votes/voter', locals: { post: @post } %>
   <h1>
-    <%= @post.title %> <br>
+    <%= @post.title %>
+    <% if @post.rating %>
+     <button type="button" class="btn btn-info"><%= @post.rating %></button>
+   <% end %>
+   <br>
     <small>
       submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %>
     </small>

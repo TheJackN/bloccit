@@ -1,4 +1,9 @@
-<h1><%= @topic.name %></h1>
+<h1>
+  <%= @topic.name %>
+  <% if @topic.rating %>
+   <button type="button" class="btn btn-info"><%= @topic.rating %></button>
+ <% end %>
+</h1>
 
 <% if user_is_authorized_for_topics? %>
   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
@@ -18,6 +23,9 @@
         <div class="media-body">
           <h4 class="media-heading">
             <%= link_to post.title, topic_post_path(@topic, post) %>
+            <% if post.rating %>
+             <button type="button" class="btn btn-info"><%= post.rating %></button>
+           <% end %>
             <%= render partial: "labels/list", locals: { labels: post.labels } %>
           </h4>
           <small>
